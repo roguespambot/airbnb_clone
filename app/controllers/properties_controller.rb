@@ -12,7 +12,6 @@ class PropertiesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
     @property = Property.find(params[:id])
   end
 
@@ -32,6 +31,6 @@ class PropertiesController < ApplicationController
 
 private
   def property_params
-    params.require(:property).permit(:title, :address, :description, :bedrooms, :long_term, :price)
+    params.require(:property).permit(:rented, :title, :address, :description, :bedrooms, :long_term, :price)
   end
 end

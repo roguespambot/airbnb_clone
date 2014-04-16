@@ -8,4 +8,15 @@
   <p><%= @property.description %></p>
 </div>
 
-<button type="submit" class="btn btn-danger"> I want it!</button>
+<div id="i-want-it">
+  <% if @property.rented %>
+    <p>This property has been rented.</p>
+  <% elsif user_signed_in? %>
+    <%= link_to "I want it!", new_property_rental_path(@property), :class => "btn btn-fire", remote: true %>
+  <% else %>
+    <p>Property available, <%= link_to "sign in", new_user_session_path %> to reserve!</p>
+  <% end %>
+</div>
+<div id="i-got-it">
+
+</div>

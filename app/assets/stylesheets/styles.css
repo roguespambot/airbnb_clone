@@ -7,14 +7,21 @@
 }
 
 .header {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 600;
+  max-width: 50%;
+  padding: 8px;
+  margin: 10px;
 }
 
 .property_display {
   font-size: 22px;
   padding: 20px;
-  max-width: 50%;
+  max-width: 60%;
+  font-family: Georgia;
+  background-color: #0066B2;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .logo {
@@ -32,11 +39,13 @@
 .btn-fire {
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
+  background-color: #0091FF;
 }
 
 .btn-fire-sm {
   padding: 1px;
   font-size: 12px;
+  background-color: #0091FF;
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
   max-height: 20px;
@@ -54,4 +63,16 @@
 
 .all_properties {
   list-style: none;
+  font-size: 22px;
+  max-width: 60%;
+  font-family: Georgia;
+}
+
+.button_wrapper {
+  margin: 10px;
+}
+
+.rental-form {
+  margin-left: 20px;
+  max-width: 200px;
 }
