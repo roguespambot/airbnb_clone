@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
     owner = Owner.find(self.id)
     owner.properties
   end
+
+  def rentals
+    renter = Renter.find(self.id)
+    renter.rentals
+  end
 end

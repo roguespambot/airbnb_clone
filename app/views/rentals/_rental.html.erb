@@ -1,0 +1,4 @@
+<li>
+  <p><%= link_to rental.property.title, property_path(rental.property) %></p>
+  <%= link_to "Rate it!", new_rental_rating_path(rental), id: 'add-rating', remote: true %>
+</li>

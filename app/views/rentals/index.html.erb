@@ -1,0 +1,9 @@
+<%= content_for(:header) do %>
+  Places You've Rented
+<% end %>
+
+<ul>
+  <div class="all_rentals">
+    <%= render(@rentals) %>
+  </div>
+</ul>

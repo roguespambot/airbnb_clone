@@ -1,0 +1,12 @@
+<div class="rating-form">
+  <%= form_for [@rental, @rating], remote: true do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :renter_id, value: current_user.id %>
+      <%= f.hidden_field :rental_id, value: @rental.id %>
+
+      <%= f.label :value %>
+      <%= f.number_field :value, :class => "form-control" %>
+    </div>
+    <%= f.submit "Go!" %>
+  <% end %>
+</div>

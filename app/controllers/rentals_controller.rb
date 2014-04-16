@@ -2,6 +2,11 @@ class RentalsController < ApplicationController
 
   before_action :authenticate_user!, :only => [:new, :create]
 
+  def index
+    @user = current_user
+    @rentals = @user.rentals
+  end
+
   def new
     @rental = Rental.new
     @property = Property.find(params[:property_id])
