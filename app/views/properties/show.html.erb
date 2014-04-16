@@ -1,0 +1,11 @@
+<%= content_for(:header) do %>
+  <%= @property.title %>
+<% end %>
+
+<div class="property_display">
+  <p><%= @property.bedrooms %> bedrooms</p>
+  <p><%= number_to_currency(@property.price) %></p>
+  <p><%= @property.description %></p>
+</div>
+
+<button type="submit" class="btn btn-danger"> I want it!</button>

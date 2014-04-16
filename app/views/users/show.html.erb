@@ -8,4 +8,6 @@
   </div>
 </ul>
 
-<%= link_to "Add Property", new_user_property_path(@user), id: "add-property", :class => "btn btn-fire", remote: true %>
+<% if current_user == @user %>
+  <%= link_to "Add Property", new_user_property_path(@user), id: "add-property", :class => "btn btn-fire", remote: true %>
+<% end %>
