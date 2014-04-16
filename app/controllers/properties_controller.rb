@@ -2,6 +2,10 @@ class PropertiesController < ApplicationController
 
   before_action :authenticate_user!, :only => [:new, :create]
 
+  def index
+    @properties = Property.search(params[:search])
+  end
+
   def new
     @property = Property.new
     @user = current_user

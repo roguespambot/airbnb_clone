@@ -1,3 +1,3 @@
 <li>
-  <%= link_to property.title, user_property_path(@user, property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night
+  <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night
 </li>

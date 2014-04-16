@@ -21,6 +21,12 @@
           <%= link_to "Sign up", new_user_registration_path %> |
           <%= link_to "Login", new_user_session_path %>
         <% end %>
+        <%= form_tag properties_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Find it!", :class => "btn btn-fire-sm" %>
+          </p>
+        <% end %>
         <%= yield(:navigation) %>
       </div>
     </div>

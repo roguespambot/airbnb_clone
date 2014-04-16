@@ -14,6 +14,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'pry'
 gem 'money-rails'
+gem 'textacular', '~> 3.0'
 
 group :development do
   gem 'better_errors'
