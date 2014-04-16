@@ -25,9 +25,9 @@
       </div>
     </div>
     <div class="row">
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
       <div class="header">
-        <%= flash[:notice] %>
-        <%= flash[:alert] %>
         <%= yield(:header) %>
       </div>
       <div class="main">

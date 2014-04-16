@@ -6,7 +6,7 @@ Airbnb Clone
 
 [+] As a user, I want to sign up.
 [+] As a user, I want to login and out.
-[-] As a user, I want to list an available rental.
+[+] As a user, I want to list an available rental.
 [-] As a user, I want to search for available rentals.
 [-] As a user, I want to reserve a rental.
 [-] As a user, I want to rate rentals I have stayed in.

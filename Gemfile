@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'pry'
+gem 'money-rails'
 
 group :development do
   gem 'better_errors'

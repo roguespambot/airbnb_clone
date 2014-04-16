@@ -21,3 +21,12 @@
   color: #FFFFFF;
   text-shadow: 1px 1px #000000;
 }
+
+.form {
+  max-width: 50%;
+}
+
+.form-small {
+  max-width: 20%;
+  min-width: 90px;
+}
