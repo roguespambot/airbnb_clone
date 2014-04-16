@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Mrs+Sheppards' rel='stylesheet' type='text/css'>
   <title>AirbnbClone</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class="navbar navbar-inverse">
+        <span class="logo"><%= link_to "firebnb", root_path %></span>
+        <br/>
+        <% if user_signed_in? %>
+          Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %> |
+          <%= link_to 'Edit profile', edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+        <%= yield(:navigation) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="header">
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+        <%= yield(:header) %>
+      </div>
+      <div class="main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
