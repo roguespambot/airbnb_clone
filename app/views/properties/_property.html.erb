@@ -1,3 +1,22 @@
 <li>
-  <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night
+  <p><%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night</p>
+  <div class="rent_options">
+    <% if property.rented %>
+      <p>Property has been rented.</p>
+      <% if current_user %>
+        <% if current_user.id == property.owner.id %>
+          <%= link_to user_property_path(user_id: property.owner.id, property: {:rented => false}), method: "patch" do %>
+            Make Available
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>Property available.</p>
+      <% if current_user %>
+        <% if current_user.id == property.owner.id %>
+          <%= link_to "Edit", edit_user_property_path(current_user, property), remote: true %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </li>

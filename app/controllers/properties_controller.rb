@@ -29,6 +29,25 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def edit
+    @property = Property.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    @user = User.find(params[:user_id])
+    if @property.update(property_params)
+      respond_to do |format|
+        format.html { redirect_to user_path(@user) }
+        format.js
+      end
+    else
+      flash[:alert] = "Caution! Your property has not saved!"
+      render ('users/show.html.erb')
+    end
+  end
+
 private
   def property_params
     params.require(:property).permit(:rented, :title, :address, :description, :bedrooms, :long_term, :price)
