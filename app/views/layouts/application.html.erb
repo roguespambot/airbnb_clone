@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href='http://fonts.googleapis.com/css?family=Mrs+Sheppards' rel='stylesheet' type='text/css'>
   <title>AirbnbClone</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Mrs+Sheppards' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class="container">
-    <div class="row">
-      <div class="navbar navbar-inverse">
-        <span class="logo"><%= link_to "firebnb", root_path %></span>
-        <br/>
-        <% if user_signed_in? %>
-          Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %> |
-          <%= link_to "See Rentals", rentals_path(current_user) %> |
-          <%= link_to 'Edit profile', edit_user_registration_path %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
-        <% end %>
-        <%= form_tag properties_path, :method => 'get' do %>
-          <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Find it!", :class => "btn btn-fire-sm" %>
-          </p>
-        <% end %>
-        <%= yield(:navigation) %>
+
+      <div class="row navigation">
+        <div class="col-md-2 login_links">
+
+          <span class="logo"><%= link_to "waterbnb", root_path %></span>
+          <% if user_signed_in? %>
+            <p>Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %> |
+            <%= link_to "See Rentals", rentals_path(current_user) %> |
+            <%= link_to 'Edit profile', edit_user_registration_path %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
+          <% else %>
+            <p><%= link_to "Sign up", new_user_registration_path %> |
+            <%= link_to "Login", new_user_session_path %></p>
+          <% end %>
+
+        </div>
+        <div class="col-md-10 other_links">
+
+          <%= form_tag properties_path, :method => 'get' do %>
+            <p>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Find it!", :class => "btn btn-fire" %>
+            </p>
+          <% end %>
+          <%= yield(:navigation) %>
+
+        </div>
       </div>
-    </div>
+
     <div class="row">
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
       <div class="header">
+
         <%= yield(:header) %>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+
       </div>
       <div class="main">
+
         <%= yield %>
+
       </div>
     </div>
+
   </div>
 </body>
 </html>

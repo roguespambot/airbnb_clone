@@ -1,4 +1,6 @@
-<h2>Sign in</h2>
+<% content_for(:header) do %>
+  Sign in
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group"><%= f.label :email %><br />
