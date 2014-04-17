@@ -16,8 +16,8 @@
 
           <span class="logo"><%= link_to "waterbnb", root_path %></span>
           <% if user_signed_in? %>
-            <p>Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %> |
-            <%= link_to "See Rentals", rentals_path(current_user) %> |
+            <p>Logged in as <%= link_to "#{current_user.name}", user_path(current_user) %><br/>
+            <%= link_to "See Rentals", rentals_path(current_user) %><br/>
             <%= link_to 'Edit profile', edit_user_registration_path %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
           <% else %>
@@ -43,8 +43,10 @@
       <div class="header">
 
         <%= yield(:header) %>
-        <%= flash[:notice] %>
-        <%= flash[:alert] %>
+        <div class="errors">
+          <%= flash[:notice] %>
+          <%= flash[:alert] %>
+        </div>
 
       </div>
       <div class="main">

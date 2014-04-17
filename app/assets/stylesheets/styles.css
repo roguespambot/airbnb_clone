@@ -24,6 +24,12 @@ body {
 
 }
 
+.errors {
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 20px;
+}
+
 .other_links {
   float: right;
   text-align: right;
