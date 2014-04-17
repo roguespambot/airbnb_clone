@@ -34,6 +34,7 @@
               <%= submit_tag "Find it!", :class => "btn btn-fire" %>
             </p>
           <% end %>
+          <%= link_to "All Properties", properties_path %> | <%= link_to "Currently Available", properties_path(:available => true) %> | <%= link_to "Highest Rated", properties_path(:by_rating => true) %>
           <%= yield(:navigation) %>
 
         </div>

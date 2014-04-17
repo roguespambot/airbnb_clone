@@ -3,7 +3,15 @@ class PropertiesController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
 
   def index
-    @properties = Property.search(params[:search])
+    if params[:by_rating]
+      @properties = Property.order_by_rating
+    elsif params[:available]
+      @properties = Property.available
+    elsif params[:search]
+      @properties = Property.search(params[:search])
+    else
+      @properties = Property.all
+    end
   end
 
   def new
@@ -17,6 +25,7 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
+    @property.update(:rented => false)
     @user = current_user
     if @property.save
       respond_to do |format|

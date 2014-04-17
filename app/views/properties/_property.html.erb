@@ -1,7 +1,11 @@
 <li>
   <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedroom(s) for <%= number_to_currency(property.price) %> / night
   <div class="rent_options">
-    Average Rating: <%= property.average_rating %>
+    <% if property.average_rating != 0 %>
+      Average Rating: <%= property.average_rating %>
+    <% else %>
+      Average Rating: Not rated
+    <% end %>
     <% if property.rented %>
       | <i>Property has been rented.</i><br/><br/>
       <% if current_user %>

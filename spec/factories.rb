@@ -14,6 +14,7 @@ FactoryGirl.define do
     bedrooms 2
     long_term false
     owner_id 1
+    rented false
   end
 
   factory :rental1, :class => Rental do

@@ -14,9 +14,17 @@ class Property < ActiveRecord::Base
       if total != 0
         average = total / self.rentals.length
       else
-        average = "Not rated"
+        average = 0
       end
     end
+  end
+
+  def self.order_by_rating
+    Property.all.sort { |a,b| b.average_rating <=> a.average_rating }
+  end
+
+  def self.available
+    Property.all.where(:rented => false)
   end
 
 private
