@@ -6,6 +6,12 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
 
+  after_create :send_welcome_message
+
+  def send_welcome_message
+    UserMailer.signup_confirmation(self).deliver
+  end
+
   def properties
     owner = Owner.find(self.id)
     owner.properties
