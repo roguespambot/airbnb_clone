@@ -57,9 +57,13 @@ a:hover{
 
 .property_display {
   font-size: 20px;
-  padding: 20px;
+  padding: 10px;
   max-width: 60%;
-  margin: 10px;
+  margin: 10px auto 0px auto;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   border-radius: 5px;
 }
 
@@ -74,7 +78,10 @@ a:hover{
 }
 
 .btn-fire {
-  color: #2E3D45;
+  background-color: #FFE1B0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
 }
 
 .form {
@@ -101,6 +108,16 @@ a:hover{
   margin: 10px;
 }
 
+.form {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 80%;
+}
+
 .button_wrapper {
   margin: 10px;
 }
@@ -119,4 +136,14 @@ a:hover{
 .edit_links {
   font-size: 15px;
   font-style: italic;
+}
+
+#i-want-it {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#i-got-it {
+  margin-top: 20px;
+  text-align: center;
 }

@@ -1,22 +1,19 @@
 <%= content_for(:header) do %>
   <%= @property.title %>
 <% end %>
-
-<div class="property_display">
+<div class="row property_display">
   <p><%= @property.bedrooms %> bedrooms</p>
   <p><%= number_to_currency(@property.price) %></p>
   <p><%= @property.description %></p>
 </div>
-
-<div id="i-want-it">
+<div class= "row" id="i-want-it">
   <% if @property.rented %>
     <p>This property has been rented.</p>
   <% elsif user_signed_in? %>
-    <%= link_to "I want it!", new_property_rental_path(@property), :class => "btn btn-fire", remote: true %>
+    <%= link_to "I want it!", new_property_rental_path(@property), remote: true, :class => "btn btn-fire" %>
   <% else %>
     <p>Property available, <%= link_to "sign in", new_user_session_path %> to reserve!</p>
   <% end %>
 </div>
-<div id="i-got-it">
-
+<div class= "row" id="i-got-it">
 </div>

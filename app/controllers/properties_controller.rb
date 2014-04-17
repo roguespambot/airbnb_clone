@@ -48,6 +48,12 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def destroy
+    @property = Property.find(params[:id])
+    @property.destroy
+    redirect_to user_path(@property.owner)
+  end
+
 private
   def property_params
     params.require(:property).permit(:owner_id, :rented, :title, :address, :description, :bedrooms, :long_term, :price)
