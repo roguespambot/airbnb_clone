@@ -17,20 +17,21 @@ FactoryGirl.define do
   end
 
   factory :rental1, :class => Rental do
-    id 1
     renter_id 1
     property_id 1
   end
 
   factory :rental2, :class => Rental do
-    id 1
     renter_id 1
     property_id 1
   end
 
   factory :rating1, :class => Rating do
-    rental_id 1
-    value 5
+    value 6.0
+  end
+
+  factory :rating2, :class => Rating do
+    value 4.0
   end
 end
 
