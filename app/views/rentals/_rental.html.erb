@@ -1,4 +1,4 @@
 <li>
-  <p><%= link_to rental.property.title, property_path(rental.property) %></p>
-  <%= link_to "Rate it!", new_rental_rating_path(rental), id: 'add-rating', remote: true %>
+  <p><%= link_to rental.property.title, property_path(rental.property) %> | <i>Rented from <%= rental.start_date.strftime("%B %d") %> to <%= rental.end_date.strftime("%B %d") %></i>
+    [ <%= link_to "Rate it!", new_rental_rating_path(rental), id: "add-rating-#{rental.id}", remote: true %> ]</p>
 </li>
