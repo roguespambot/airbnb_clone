@@ -1,5 +1,5 @@
 <li>
-  <p><%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night</p>
+  <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedrooms for <%= number_to_currency(property.price) %> / night
   <div class="rent_options">
     <% if property.rented %>
       <p>Property has been rented.</p>
@@ -11,10 +11,11 @@
         <% end %>
       <% end %>
     <% else %>
-      <p>Property available.</p>
+      <p><i>Property available.</i></p>
       <% if current_user %>
-        <% if current_user.id == property.owner.id %>
-          <%= link_to "Edit", edit_user_property_path(current_user, property), remote: true %>
+       <span class="edit_links"><% if current_user.id == property.owner.id %>
+          <%= link_to "Edit", edit_user_property_path(current_user, property), remote: true %> |
+          <%= link_to "Remove", user_property_path(current_user, property), :data => {:confirm => "Are you certain?", :method => "delete"} %></span>
         <% end %>
       <% end %>
     <% end %>
