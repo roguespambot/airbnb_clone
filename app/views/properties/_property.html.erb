@@ -2,7 +2,7 @@
   <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedroom(s) for <%= number_to_currency(property.price) %> / night
   <div class="rent_options">
     <% if property.average_rating != 0 %>
-      Average Rating: <%= property.average_rating %>
+      Average Rating: <%= "%.1f" % property.average_rating %>
     <% else %>
       Average Rating: Not rated
     <% end %>
