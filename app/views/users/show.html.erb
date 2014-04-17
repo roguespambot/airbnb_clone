@@ -1,13 +1,11 @@
 <%= content_for(:header) do %>
   <%= @user.name %>
 <% end %>
-
+<% if current_user == @user %>
+  <%= link_to "Add Property", new_user_property_path(@user), id: "add-property", :class => "btn btn-fire", remote: true %>
+<% end %>
 <ul>
   <div class="all_properties">
     <%= render(@user.properties) %>
   </div>
 </ul>
-
-<% if current_user == @user %>
-  <%= link_to "Add Property", new_user_property_path(@user), id: "add-property", :class => "btn btn-fire", remote: true %>
-<% end %>
