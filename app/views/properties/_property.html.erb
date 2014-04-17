@@ -1,5 +1,10 @@
 <li>
   <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedroom(s) for <%= number_to_currency(property.price) %> / night
+   <p>
+      <% if property.image_file_name %>
+        <%= image_tag property.image.url(:small) %>
+      <% end %>
+    </p>
   <div class="rent_options">
     <% if property.average_rating != 0 %>
       Average Rating: <%= "%.1f" % property.average_rating %>

@@ -3,6 +3,14 @@ class Property < ActiveRecord::Base
   has_many :ratings, through: :rentals
   belongs_to :owner
 
+  has_attached_file :image, :styles => { :small => "150x150>", :medium => "300x300>", :large => "400x400>" },
+    :url => "/assets/properties/:id/:style/:basename.:extension",
+    :path => ":rails_root/public/assets/properties/:id/:style/:basename.:extension"
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }, size: {less_than: 5.megabytes}
+  validates :owner_id, presence: true
+  validates :title, presence: true
+  validates :price, presence: true
+
   def average_rating
     total = 0
     if self.rentals

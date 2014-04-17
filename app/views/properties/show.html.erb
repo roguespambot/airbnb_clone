@@ -5,6 +5,11 @@
   <p><%= @property.bedrooms %> bedrooms</p>
   <p><%= number_to_currency(@property.price) %></p>
   <p><%= @property.description %></p>
+  <p>
+      <% if @property.image_file_name %>
+        <%= image_tag @property.image.url(:medium) %>
+      <% end %>
+    </p>
 </div>
 <div class= "row" id="i-want-it">
   <% if @property.rented %>

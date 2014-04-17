@@ -18,4 +18,10 @@ Airbnb Clone
 [-] As a user, I want to receive an email when someone reserves my rental.
 [-] As a user, I want to receive an email confirmation when I make a reservation.
 
-
+Deliberately designed for practice with:
+Textacular
+Faker
+Devise
+Paperclip
+FactoryGirl
+LetterOpener

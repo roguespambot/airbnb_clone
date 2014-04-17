@@ -1,5 +1,5 @@
 <div class="form">
-  <%= form_for [@user, @property], remote: true do |f| %>
+  <%= form_for [@user, @property], :html => { :multipart => true }, remote: true do |f| %>
     <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
@@ -20,6 +20,11 @@
       <%= f.label :bedrooms %>
       <%= f.number_field :bedrooms, :class => "form-control form-small" %>
     </div>
+
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
+
     <div class="form-group">
       <%= f.label :long_term %>
       <%= f.check_box :long_term %>

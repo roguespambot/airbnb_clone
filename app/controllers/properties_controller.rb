@@ -1,6 +1,6 @@
 class PropertiesController < ApplicationController
 
-  before_action :authenticate_user!, :only => [:new, :create]
+  before_action :authenticate_user!, :only => [:new, :create, :edit, :update]
 
   def index
     if params[:by_rating]
@@ -65,6 +65,6 @@ class PropertiesController < ApplicationController
 
 private
   def property_params
-    params.require(:property).permit(:owner_id, :rented, :title, :address, :description, :bedrooms, :long_term, :price)
+    params.require(:property).permit(:owner_id, :image, :rented, :title, :address, :description, :bedrooms, :long_term, :price)
   end
 end

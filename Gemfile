@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'pry'
 gem 'money-rails'
 gem 'textacular', '~> 3.0'
+gem "paperclip", '~> 4.1'
+gem 'remotipart', '~> 1.2.1'
 
 group :development do
   gem 'better_errors'
