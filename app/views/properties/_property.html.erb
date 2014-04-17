@@ -1,8 +1,9 @@
 <li>
   <%= link_to property.title, property_path(property) %> | <%= property.bedrooms %> bedroom(s) for <%= number_to_currency(property.price) %> / night
   <div class="rent_options">
+    Average Rating: <%= property.average_rating %>
     <% if property.rented %>
-      <p>Property has been rented.</p>
+      | <i>Property has been rented.</i><br/><br/>
       <% if current_user %>
         <% if current_user.id == property.owner.id %>
           <span class="edit_links"><%= link_to user_property_path(property.owner, property, property: {:rented => false}), method: "patch" do %>
@@ -11,7 +12,7 @@
         <% end %>
       <% end %>
     <% else %>
-      <p><i>Property available.</i></p>
+      | <i>Property available.</i><br/><br/>
       <% if current_user %>
        <span class="edit_links"><% if current_user.id == property.owner.id %>
           <%= link_to "Edit", edit_user_property_path(current_user, property), remote: true %> |

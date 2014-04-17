@@ -11,9 +11,11 @@ class Property < ActiveRecord::Base
           total += rental.rating.value
         end
       end
-      average = total / self.rentals.length
-    else
-      average = 0
+      if total != 0
+        average = total / self.rentals.length
+      else
+        average = "Not rated"
+      end
     end
   end
 

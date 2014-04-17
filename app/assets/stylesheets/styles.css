@@ -164,3 +164,7 @@ a:hover{
   display: inline-block;
   max-width: 60px;
 }
+
+.rent_options {
+  font-size: 15px;
+}

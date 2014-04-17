@@ -14,7 +14,7 @@ describe Property do
       property = FactoryGirl.create(:property)
       rental1 = FactoryGirl.create(:rental1, :property_id => property.id)
       rental2 = FactoryGirl.create(:rental2, :property_id => property.id)
-      property.average_rating.should eq 0
+      property.average_rating.should eq "Not rated"
     end
   end
 end
