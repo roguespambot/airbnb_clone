@@ -10,6 +10,7 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(rating_params)
+    @rental = Rental.find(params[:rental_id])
     if @rating.save
        respond_to do |format|
         format.html { redirect_to rentals_path(current_user) }

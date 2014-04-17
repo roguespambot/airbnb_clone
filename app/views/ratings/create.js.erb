@@ -1,2 +1,2 @@
 $('#new_rating').remove();
-$('.add-rating-<%= @rating.rental.id %>').show();
+$('#add-rating-<%= @rental.id %>')show().append('Rating: <%= @rating.value %>');
