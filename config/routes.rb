@@ -10,5 +10,7 @@ AirbnbClone::Application.routes.draw do
     resources :ratings
   end
 
+  resources :homes
+
   root to: "homes#index"
 end

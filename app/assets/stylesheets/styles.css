@@ -15,6 +15,20 @@ a:hover{
   color: #2E3D45;
 }
 
+table, th, td {
+  color: #E8D4A0;
+  border: 1px solid black;
+  padding: 10px;
+  margin-left: -25px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+td {
+  width: 100px;
+  height: 50px;
+}
+
 .container {
   margin-top: 10px;
   background-color: #E8D4A0;
@@ -131,8 +145,10 @@ a:hover{
 }
 
 .rental-form {
-  margin-left: 20px;
-  max-width: 200px;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: inline-block;
+  max-width: 40%;
 }
 
 .user_options {
@@ -167,5 +183,9 @@ a:hover{
 
 .rent_options {
   font-size: 15px;
+}
+
+.calendar {
+  margin: 20px;
 }
 

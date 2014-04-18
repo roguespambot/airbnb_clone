@@ -41,4 +41,12 @@ describe Property do
       Property.available.should eq [property2]
     end
   end
+
+  describe '#check_date' do
+    it 'checks if the property is available on a given date' do
+      property = FactoryGirl.create(:property)
+      rental = FactoryGirl.create(:rental1, :property_id => property.id)
+      property.check_date(Date.today).should eq false
+    end
+  end
 end

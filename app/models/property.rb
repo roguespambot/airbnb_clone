@@ -35,6 +35,17 @@ class Property < ActiveRecord::Base
     Property.all.where(:rented => false)
   end
 
+  def check_date(check_date)
+    available = true
+
+    self.rentals.each do |rental|
+      if check_date.between?(rental.start_date, rental.end_date)
+        available = false
+      end
+    end
+    available
+  end
+
 private
 
   def self.search(search)

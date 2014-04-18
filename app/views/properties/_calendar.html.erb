@@ -1,0 +1,21 @@
+<table class="calendar">
+  <tr>
+    <th>Sunday</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+  </tr>
+  <% index = 1 %>
+  <% for i in 1..5 do %>
+      <tr id="row-<%= i %>">
+        <% for j in 1..7 do %>
+            <td id="index=<%= index %>"><%= index %></td>
+            <% index += 1 %>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+

@@ -1,4 +1,11 @@
 <div class="rental-form">
+
+  <% if @rental.errors.any? %>
+    <% @rental.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+
   <%= form_for [@property, @rental], remote: true do |f| %>
     <div class="form-group">
       <%= f.hidden_field :renter_id, value: current_user.id %>
