@@ -10,6 +10,7 @@ class RentalsController < ApplicationController
   def new
     @rental = Rental.new
     @property = Property.find(params[:property_id])
+    @month_counter = params[:month_counter]
   end
 
   def create

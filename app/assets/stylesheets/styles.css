@@ -189,3 +189,15 @@ td {
   margin: 20px;
 }
 
+.buttons {
+  padding: 15px 50px 15px 15px;
+  text-align: center;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}

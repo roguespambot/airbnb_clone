@@ -1,30 +1,38 @@
-<table class="calendar">
-  <tr>
-    <th>Sunday</th>
-    <th>Monday</th>
-    <th>Tuesday</th>
-    <th>Wednesday</th>
-    <th>Thursday</th>
-    <th>Friday</th>
-    <th>Saturday</th>
-  </tr>
-  <% index = 1 %>
-  <% day = Calendar.find_start %>
-  <% for i in 1..5 do %>
-      <tr id="row-<%= i %>">
-        <% for j in 1..7 do %>
-            <td id="index-<%= index %>">
-              <% if ((index > day) && (index <= (Calendar.find_end_day + day))) %>
-                <% if Calendar.available(index, @property) %>
-                  <%= index - day %>
-                <% else %>
-                  Reserved
+<div class="calendar">
+  <% month_navigation = @month_counter.to_i %>
+  <h3><%= Calendar.month_name(month_navigation) %></h3>
+  <table>
+    <tr>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+    </tr>
+    <% index = 1 %>
+    <% day = Calendar.find_start(month_navigation) %>
+    <% for i in 1..5 do %>
+        <tr id="row-<%= i %>">
+          <% for j in 1..7 do %>
+              <td id="index-<%= index %>">
+                <% if ((index > day) && (index <= (Calendar.find_end_day(month_navigation) + day))) %>
+                  <% if Calendar.available(index, @property, month_navigation) %>
+                    <%= index - day %>
+                  <% else %>
+                    Reserved
+                  <% end %>
                 <% end %>
-              <% end %>
-            </td>
-            <% index += 1 %>
-        <% end %>
-      </tr>
-  <% end %>
-</table>
+              </td>
+              <% index += 1 %>
+          <% end %>
+        </tr>
+    <% end %>
+  </table>
+  <div class="buttons">
+    <%= link_to "Previous Month", new_property_rental_path(@property, :month_counter => month_navigation - 1), :remote => true, :class => "btn btn-fire", :id => "previous" %>
+    <%= link_to "Next Month", new_property_rental_path(@property, :month_counter => month_navigation + 1), :remote => true, :class => "btn btn-fire", :id => "next" %>
+  </div>
+</div>
 

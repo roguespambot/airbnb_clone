@@ -17,6 +17,7 @@ Airbnb Clone
 [+] As an owner, I want to include a photo of my property.
 [+] As a renter, I want to view photos of properties when searching for a rental.
 [+] As a user, I want to receive an email when I sign up.
+[+] As a user, I want to see a calendar of available dates during this month for a property so I know when it is available for rental.
 [-] As a user, I want to receive an email when someone reserves my rental.
 [-] As a user, I want to receive an email confirmation when I make a reservation.
 
