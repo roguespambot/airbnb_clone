@@ -17,6 +17,8 @@ gem 'money-rails'
 gem 'textacular', '~> 3.0'
 gem "paperclip", '~> 4.1'
 gem 'remotipart', '~> 1.2.1'
+gem 'faye'
+gem 'thin'
 
 group :development do
   gem 'better_errors'

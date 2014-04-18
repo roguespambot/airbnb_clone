@@ -1,7 +1,7 @@
 <li>
   <p><%= link_to rental.property.title, property_path(rental.property) %> | <i>Rented from <%= rental.start_date.strftime("%B %d") %> to <%= rental.end_date.strftime("%B %d") %></i>
   <% if !rental.rating %>
-    [ <%= link_to "Rate it!", new_rental_rating_path(rental), id: "add-rating-#{rental.id}", remote: true %> ]</p>
+    [ <span id="rating"><%= link_to "Rate it!", new_rental_rating_path(rental), id: "add-rating-#{rental.id}", remote: true %></span> ]</p>
   <% else %>
     <span id="rated"> [ Rating: <%= rental.rating.value %> ]</p></span>
   <% end %>
